@@ -27,4 +27,15 @@ public class ProductRepository {
     public List<Product> getProductData() {
         return productData;
     }
+
+    public Product edit(Product editedProduct) {
+        for (Product product : productData) {
+            if (product.getId().equals(editedProduct.getId())) {
+                product.setProductName(editedProduct.getProductName());
+                product.setQuantity(editedProduct.getQuantity());
+                return product;
+            }
+        }
+        return null;
+    }
 }
