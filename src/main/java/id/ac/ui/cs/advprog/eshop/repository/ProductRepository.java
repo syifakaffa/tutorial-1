@@ -20,13 +20,11 @@ public class ProductRepository {
         return productData.iterator();
     }
 
-    public boolean deleteById(String productId) {
-        for (Product product : productData) {
-            if (product.getId().equals(productId)) {
-                productData.remove(product);
-                return true; // Produk berhasil dihapus
-            }
-        }
-        return false; // Produk tidak ditemukan
+    public void delete(Product product) {
+        productData.remove(product);
+    }
+
+    public List<Product> getProductData() {
+        return productData;
     }
 }
