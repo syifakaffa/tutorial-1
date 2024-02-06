@@ -17,4 +17,19 @@ public class Product {
         this.productId = id;
     }
 
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String newProductName) {
+        this.productName = newProductName;
+    }
+
+    public int getQuantity() {
+        return productQuantity;
+    }
+
+    public void setQuantity(int newQuantity) {
+        this.productQuantity = newQuantity;
+    }
 }
