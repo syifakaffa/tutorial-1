@@ -103,4 +103,53 @@ class ProductRepositoryTest {
         assertFalse(productIterator.hasNext());
     }
 
+    @Test
+    void testEditProduct() {
+        Product product1 = new Product();
+        product1.setProductId("eb558e9f-1c39-460e-8860-71af6af63bd6");
+        product1.setProductName("Sampo Cap Bambang");
+        product1.setProductQuantity(100);
+        productRepository.create(product1);
+
+        Product product2 = new Product();
+        product2.setProductId("eb558e9f-1c39-460e-8860-71af6af63bd6"); // ID yang sama dengan product1
+        product2.setProductName("Sampo Cap Usep");
+        product2.setProductQuantity(50);
+
+        Iterator<Product> productIterator = productRepository.findAll();
+        productRepository.edit(product2);
+
+        Product edited = productIterator.next();
+        // Verifikasi bahwa produk telah diubah dengan benar
+        assertEquals(product2.getProductName(), edited.getProductName());
+        assertEquals(product2.getProductQuantity(), edited.getProductQuantity());
+        assertEquals(product2.getProductId(), edited.getProductId());
+
+        // Verifikasi bahwa data produk yang disimpan telah diperbarui
+        assertEquals(product2.getProductId(), product1.getProductId());
+        assertEquals(product2.getProductQuantity(), product1.getProductQuantity());
+    }
+
+    @Test
+    void testEditProductNotFound() {
+        Product product1 = new Product();
+        product1.setProductId("eb558e9f-1c39-460e-8860-71af6af63bd6");
+        product1.setProductName("Sampo Cap Bambang");
+        product1.setProductQuantity(100);
+        productRepository.create(product1);
+
+        Product product2 = new Product();
+        product2.setProductName("Sampo Cap Usep");
+        product2.setProductQuantity(50);
+
+        Iterator<Product> productIterator = productRepository.findAll();
+        productRepository.edit(product2);
+
+        Product edited = productIterator.next();
+        assertNotEquals(product2.getProductName(), edited.getProductName());
+        assertNotEquals(product2.getProductQuantity(), edited.getProductQuantity());
+        assertNotEquals(product2.getProductId(), edited.getProductId());
+        assertNotEquals(product2.getProductId(), product1.getProductId());
+        assertNotEquals(product2.getProductQuantity(), product1.getProductQuantity());
+    }
 }
