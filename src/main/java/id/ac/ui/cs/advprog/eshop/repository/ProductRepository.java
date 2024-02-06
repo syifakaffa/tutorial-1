@@ -3,21 +3,16 @@ package id.ac.ui.cs.advprog.eshop.repository;
 import id.ac.ui.cs.advprog.eshop.model.Product;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 @Repository
 public class ProductRepository {
     private List<Product> productData = new ArrayList<>();
-    private int nextId = 1; //menyimpan ID product berikutnya (unik)
 
     public Product create(Product product) {
-        product.setId(nextId); // set ID berdasarkan urutan masuk
+        String id = UUID.randomUUID().toString();
+        product.setId(id);
         productData.add(product);
-        nextId++;
-        System.out.println(nextId + " " + product.getId());
         return product;
     }
 
@@ -25,9 +20,9 @@ public class ProductRepository {
         return productData.iterator();
     }
 
-    public boolean deleteById(int productId) {
+    public boolean deleteById(String productId) {
         for (Product product : productData) {
-            if (Objects.equals(product.getId(), productId)) {
+            if (product.getId().equals(productId)) {
                 productData.remove(product);
                 return true; // Produk berhasil dihapus
             }
