@@ -15,4 +15,4 @@ Saya rasa, kode yang saya buat sudah cukup baik dalam menerapkan Clean dan Secur
 
    Terkait jumlah unit test yang harus dibuat dalam sebuah class, saya rasa kita harus menyesuaikan jumlahnya dengan beberapa pertimbangan, seperti kekompleksitasan sebuah class atau berdasarkan  jumlah method yang ada.  Namun satu hal yang pasti, usahakan untuk minimal memiliki 1 unit-test pada sebuah program.
 
-   Untuk memastikan unit-test yang kita buat sudah cukup baik, kita bisa mencoba beberapa unit-test dengan test case yang bisa saja outlier. Lalu, saya rasa ika code kita memiliki 100% code coverage, itu tidak berarti kode kita tidak akan mengalami bug/error.
+   Untuk memastikan unit-test yang kita buat sudah cukup baik, kita bisa mencoba beberapa unit-test dengan test case yang bisa saja outlier. Lalu, saya rasa jika code kita memiliki 100% code coverage, itu tidak berarti kode kita tidak akan mengalami bug/error.
