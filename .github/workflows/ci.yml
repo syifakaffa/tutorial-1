@@ -1,13 +1,12 @@
 name: Continuous Integration (CI)
-
-## Run CI jobs on all branches by default
+#Run CI jobs on all branches by default
 on:
   push:
   pull_request:
 
 jobs:
   test:
-    name: Run tests
+    name:
     runs-on: ubuntu-22.04
     steps:
       - name: Check out the Git repository
@@ -18,5 +17,7 @@ jobs:
           distribution: "temurin"
           java-version: "21"
           cache: "gradle"
+      - name: Set up permissions for Gradle
+        run: chmod +x ./gradlew
       - name: Run unit tests
         run: ./gradlew test
