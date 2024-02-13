@@ -7,8 +7,13 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
+import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -151,5 +156,33 @@ class ProductRepositoryTest {
         assertNotEquals(product2.getProductId(), edited.getProductId());
         assertNotEquals(product2.getProductId(), product1.getProductId());
         assertNotEquals(product2.getProductQuantity(), product1.getProductQuantity());
+    }
+
+    @Test
+    void testGetProductData() {
+        List<Product> expectedProducts = new ArrayList<>();
+
+        Product product1 = new Product();
+        product1.setProductId("eb558e9f-1c39-460e-8860-71af6af63bd6");
+        product1.setProductName("Sampo Cap Bambang");
+        product1.setProductQuantity(100);
+        productRepository.create(product1);
+
+        Product product2 = new Product();
+        product2.setProductId("eb558e9f-1c39-460e-8860-71af6af63bd6"); // ID yang sama dengan product1
+        product2.setProductName("Sampo Cap Usep");
+        product2.setProductQuantity(50);
+        productRepository.create(product2);
+
+        expectedProducts.add(product1);
+        expectedProducts.add(product2);
+
+        List<Product> actualProducts = productRepository.getProductData();
+
+        assertEquals(expectedProducts.size(), actualProducts.size());
+
+        for (Product expectedProduct : expectedProducts) {
+            assertTrue(actualProducts.contains(expectedProduct));
+        }
     }
 }

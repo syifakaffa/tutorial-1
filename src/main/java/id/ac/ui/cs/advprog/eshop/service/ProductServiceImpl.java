@@ -13,12 +13,12 @@ import java.util.UUID;
 @Service
 public class ProductServiceImpl implements ProductService {
     @Autowired
-    private ProductRepository productRepository;
+    private ProductRepository productRepository = new ProductRepository();
 
     @Override
     public Product create(Product product) {
         String id = UUID.randomUUID().toString();
-        product.setId(id);
+        product.setProductId(id);
         productRepository.create(product);
         return product;
     }
@@ -41,7 +41,7 @@ public class ProductServiceImpl implements ProductService {
     public Product findProductById(String Id) {
         List<Product> productData = productRepository.getProductData();
         for (Product product : productData) {
-            if (product.getId().equals(Id)) {
+            if (product.getProductId().equals(Id)) {
                 return product;
             }
         }
