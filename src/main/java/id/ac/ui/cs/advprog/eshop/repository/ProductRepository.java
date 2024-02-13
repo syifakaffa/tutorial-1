@@ -26,14 +26,12 @@ public class ProductRepository {
         return productData;
     }
 
-    public Product edit(Product editedProduct) {
+    public void edit(Product editedProduct) {
         for (Product product : productData) {
-            if (product.getId().equals(editedProduct.getId())) {
+            if (product.getProductId().equals(editedProduct.getProductId())) {
                 product.setProductName(editedProduct.getProductName());
-                product.setQuantity(editedProduct.getQuantity());
-                return product;
+                product.setProductQuantity(editedProduct.getProductQuantity());
             }
         }
-        return null;
     }
 }

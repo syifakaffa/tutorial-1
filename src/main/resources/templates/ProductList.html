@@ -31,12 +31,12 @@
             <td th:text="${product.productQuantity}"></td>
             <td>
                 <a style ="text-align: center">
-                    <a th:href="@{'/product/delete/' + ${product.getId()}}" class="btn btn-danger btn-sm mb-3">Delete</a>
+                    <a th:href="@{'/product/delete/' + ${product.getProductId()}}" class="btn btn-danger btn-sm mb-3">Delete</a>
                 </a>
             </td>
             <td>
                 <a style ="text-align: center">
-                    <a th:href="@{'/product/edit/' + ${product.getId()}}" class="btn btn-danger btn-sm mb-3">Edit</a>
+                    <a th:href="@{'/product/edit/' + ${product.getProductId()}}" class="btn btn-danger btn-sm mb-3">Edit</a>
                 </a>
             </td>
         </tr>
