@@ -1,4 +1,5 @@
 package id.ac.ui.cs.advprog.eshop.service;
+
 import id.ac.ui.cs.advprog.eshop.model.Car;
 import id.ac.ui.cs.advprog.eshop.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import java.util.List;
 public class CarServiceImpl implements CarService {
     @Autowired
     private CarRepository carRepository;
+
     @Override
     public Car create(Car car) {
         // TODO Auto-generated method stub
@@ -25,6 +27,7 @@ public class CarServiceImpl implements CarService {
         carIterator.forEachRemaining(allCar::add);
         return allCar;
     }
+
     @Override
     public Car findById(String carId) {
         Car car = carRepository.findById(carId);
@@ -36,6 +39,7 @@ public class CarServiceImpl implements CarService {
         // TODO Auto-generated method stub
         carRepository.update(carId, car);
     }
+
     @Override
     public void deleteCarById(String carId) {
         // TODO Auto-generated method stub
