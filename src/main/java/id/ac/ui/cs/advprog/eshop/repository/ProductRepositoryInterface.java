@@ -6,7 +6,6 @@ import java.util.Iterator;
 import java.util.List;
 
 public interface ProductRepositoryInterface {
-
     public Product create(Product product);
     public void delete(Product product);
     public void edit(Product product);
