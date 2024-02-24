@@ -89,13 +89,13 @@ class ProductServiceImplementTest {
         Product edited = service.findProductById(product1.getProductId());
 
         // Verifikasi bahwa produk telah diubah dengan benar
-        assertNotEquals(product2.getProductName(), edited.getProductName());
-        assertNotEquals(product2.getProductQuantity(), edited.getProductQuantity());
-        assertNotEquals(product2.getProductId(), edited.getProductId());
+        assertEquals(product2.getProductName(), edited.getProductName());
+        assertEquals(product2.getProductQuantity(), edited.getProductQuantity());
+        assertEquals(product2.getProductId(), edited.getProductId());
 
         // Verifikasi bahwa data produk yang disimpan telah diperbarui
-        assertNotEquals(product2.getProductId(), product1.getProductId());
-        assertNotEquals(product2.getProductQuantity(), product1.getProductQuantity());
+        assertEquals(product2.getProductId(), product1.getProductId());
+        assertEquals(product2.getProductQuantity(), product1.getProductQuantity());
     }
 
     @Test
