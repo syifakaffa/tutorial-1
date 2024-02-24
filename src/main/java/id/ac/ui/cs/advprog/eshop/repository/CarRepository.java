@@ -13,13 +13,18 @@ public class CarRepository implements CarRepositoryInterface {
 
     private List<Car> carData = new ArrayList<>();
 
-    public Car create(Car car){
-        if (car.getCarId() == null){
-            UUID uuid = UUID.randomUUID();
-            car.setCarId(uuid.toString());
+    public Car create(Car car) {
+        if (car.getCarId() == null) {
+            String newCarId = generateCarId();
+            car.setCarId(newCarId);
         }
         carData.add(car);
         return car;
+    }
+
+    private String generateCarId() {
+        UUID uuid = UUID.randomUUID();
+        return uuid.toString();
     }
 
     public Iterator<Car> findAll(){
