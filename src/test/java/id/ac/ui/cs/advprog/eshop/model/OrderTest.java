@@ -7,8 +7,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.util.ArrayList;
 import java.util.List;
 
+import id.ac.ui.cs.advprog.eshop.model.Order;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.internal.matchers.Or;
 
 class OrderTest {
     private List<Product> products;
@@ -35,7 +37,6 @@ class OrderTest {
         this.products.clear();
 
         assertThrows(IllegalArgumentException.class, () -> {
-            @SuppressWarnings("unused")
             Order order = new Order("dbd4aff4-9a7f-4603-92c2-eaf529271cc9",
                     this.products, 1708560000L, "Safira Sudrajat");
         });
@@ -54,20 +55,19 @@ class OrderTest {
         assertEquals("dbd4aff4-9a7f-4603-92c2-eaf529271cc9", order.getId());
         assertEquals(1708560000L, order.getOrderTime());
         assertEquals("Safira Sudrajat", order.getAuthor());
-        assertEquals(OrderStatus.WAITING_PAYMENT.getValue(), order.getStatus());
+        assertEquals("WAITING_PAYMENT", order.getStatus());
     }
 
     @Test
     void testCreateOrderSuccessStatus() {
         Order order = new Order("dbd4aff4-9a7f-4603-92c2-eaf529271cc9",
-                this.products, 1708560000L, "Safira Sudrajat", OrderStatus.SUCCESS.getValue());
-        assertEquals(OrderStatus.SUCCESS.getValue(), order.getStatus());
+                this.products, 1708560000L, "Safira Sudrajat", "SUCCESS");
+        assertEquals("SUCCESS", order.getStatus());
     }
 
     @Test
     void testCreateOrderInvalidStatus() {
         assertThrows(IllegalArgumentException.class, () -> {
-            @SuppressWarnings("unused")
             Order order = new Order("dbd4aff4-9a7f-4603-92c2-eaf529271cc9",
                     this.products, 1708560000L, "Safira Sudrajat", "MEOW");
         });
@@ -77,8 +77,8 @@ class OrderTest {
     void testSetStatusToCancelled() {
         Order order = new Order("dbd4aff4-9a7f-4603-92c2-eaf529271cc9",
                 this.products, 1708560000L, "Safira Sudrajat");
-        order.setStatus(OrderStatus.CANCELED.getValue());
-        assertEquals(OrderStatus.CANCELED.getValue(), order.getStatus());
+        order.setStatus("CANCELLED");
+        assertEquals("CANCELLED", order.getStatus());
     }
 
     @Test
