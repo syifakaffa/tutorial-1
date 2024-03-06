@@ -1,14 +1,10 @@
 package id.ac.ui.cs.advprog.eshop.model;
 
-import java.util.Arrays;
 import java.util.Map;
 
-import id.ac.ui.cs.advprog.eshop.enums.OrderStatus;
 import id.ac.ui.cs.advprog.eshop.enums.PaymentMethod;
 import id.ac.ui.cs.advprog.eshop.enums.PaymentStatus;
-import lombok.Builder;
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
 public class Payment {
@@ -85,8 +81,6 @@ public class Payment {
         }
         return true;
     }
-
-
 
     public void setPaymentMethod(String method) {
         if (PaymentMethod.contains(method)) {
