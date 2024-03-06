@@ -13,9 +13,6 @@ Link Deploy: https://eshop-syifakaffa.koyeb.app/
 
 ## Reflection - Module 4
 
-
-</details>
-
 1) **Reflect based on Percival (2017) proposed self-reflective questions (in “Principles and Best Practice of Testing” submodule, chapter “Evaluating Your Testing Objectives”), whether this TDD flow is useful enough for you or not. 
 If not, explain things that you need to do next time you make more tests.**
 
@@ -28,7 +25,10 @@ If not, explain things that you need to do the next time you create more tests.*
 
    Ya, saya rasa kode yang saya buat telah mengikuti F.I.R.S.T Principle. 
 
+</details>
+
 <details>
+
 <summary>Module 3</summary>
 
 ## Reflection - Module 3
