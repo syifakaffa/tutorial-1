@@ -28,32 +28,33 @@ Link Deploy: https://eshop-syifakaffa.koyeb.app/
 </details>
 
 <details>
+
 <summary>Module 3</summary>
 
 ## Reflection - Module 3
 
 1) **Explain what principles you apply to your project!**
 
-    - **Single Reponsibility Principle (SRP)**: 
-      Ya, saya menerapkan SRP dalam kode saya, dimana saya memisahkan tanggung jawab mengenerate Id dan create product ke dalam dua method yang berbeda. 
-      Selain itu, saya juga memisahkan tanggung jawab pada method update car dimana melakukan pencarian mobil dengan ID tertentu dan melakukan pengeditan atribut mobil ditempatkan di dua method yang berbeda, 
-      sehingga keduanya memiliki satu fokus saja yang harus dikerjakan.
+   - **Single Reponsibility Principle (SRP)**:
+     Ya, saya menerapkan SRP dalam kode saya, dimana saya memisahkan tanggung jawab mengenerate Id dan create product ke dalam dua method yang berbeda.
+     Selain itu, saya juga memisahkan tanggung jawab pada method update car dimana melakukan pencarian mobil dengan ID tertentu dan melakukan pengeditan atribut mobil ditempatkan di dua method yang berbeda,
+     sehingga keduanya memiliki satu fokus saja yang harus dikerjakan.
 
-    - **Open-Closes Principle**: 
-      Ya, saya telah menerapkan OCP dalam kode saya. Saya membuat agar ID dari sebuah product dan Car (pada method create) bisa open untuk extend dengan cara lain tanpa harus memodifikasi kode yang sebelumnya.
+   - **Open-Closes Principle**:
+     Ya, saya telah menerapkan OCP dalam kode saya. Saya membuat agar ID dari sebuah product dan Car (pada method create) bisa open untuk extend dengan cara lain tanpa harus memodifikasi kode yang sebelumnya.
 
-    - **Liskov Substitution Principle**:
-      Ya, saya telah menerapkan LSP dengan membuat CarController tidak meng-extend ProductController dan menjadi class yang berdiri sendiri.
-      Kita tahu bahwa LSP menyatakan bahwa objek dari suatu kelas harus bisa diganti dengan instance dari subkelasnya tanpa mengubah fungsionalitas program.
-      Jika saya tetap memaksa CarController mengextend ProductController, maka bisa saja CarController akan memiliki behavior yang tidak sesuai dengan entitas Car.
-      Dengan membatalkan CarController mengextend ProductController, saya dapat memastikan bahwa setiap kontroler fokus pada tanggung jawabnya sendiri tanpa tercampur-aduk dengan logika yang tidak relevan.
+   - **Liskov Substitution Principle**:
+     Ya, saya telah menerapkan LSP dengan membuat CarController tidak meng-extend ProductController dan menjadi class yang berdiri sendiri.
+     Kita tahu bahwa LSP menyatakan bahwa objek dari suatu kelas harus bisa diganti dengan instance dari subkelasnya tanpa mengubah fungsionalitas program.
+     Jika saya tetap memaksa CarController mengextend ProductController, maka bisa saja CarController akan memiliki behavior yang tidak sesuai dengan entitas Car.
+     Dengan membatalkan CarController mengextend ProductController, saya dapat memastikan bahwa setiap kontroler fokus pada tanggung jawabnya sendiri tanpa tercampur-aduk dengan logika yang tidak relevan.
 
-    - **Interface Segregation**:
-      Ya, saya rasa saya sudah menerapkan ISP dalam program saya. Semua Interface yang ada pada program saya hanya memiliki fungsi-funsgi (method) yang terkait dengan fokus mereka, seperti misalnya interface ProductService hanya memiliki fungs-fungsi yang terkait dnegan layanan product seperti edit, create, delete.
-   
-    - **Dependency Inversion**:
-      Ya, saya sudah merafactoring agar program menerapkan DIP. Pada program saya, saya membuat ProductRepositoryInterface dan CarRepositoryInterface untuk membuat abstraksi dari operasi-operasi yang diperlukan oleh product dan car. Dengan kata lain, memungkinkan saya untuk memisahkan kelas-kelas tingkat tinggi dari detail implementasi repositori yang mana sudah memenuhi DIP.
-  
+   - **Interface Segregation**:
+     Ya, saya rasa saya sudah menerapkan ISP dalam program saya. Semua Interface yang ada pada program saya hanya memiliki fungsi-funsgi (method) yang terkait dengan fokus mereka, seperti misalnya interface ProductService hanya memiliki fungs-fungsi yang terkait dnegan layanan product seperti edit, create, delete.
+
+   - **Dependency Inversion**:
+     Ya, saya sudah merafactoring agar program menerapkan DIP. Pada program saya, saya membuat ProductRepositoryInterface dan CarRepositoryInterface untuk membuat abstraksi dari operasi-operasi yang diperlukan oleh product dan car. Dengan kata lain, memungkinkan saya untuk memisahkan kelas-kelas tingkat tinggi dari detail implementasi repositori yang mana sudah memenuhi DIP.
+
 
 2) **Explain the advantages of applying SOLID principles to your project with examples.**
 
@@ -64,7 +65,7 @@ Link Deploy: https://eshop-syifakaffa.koyeb.app/
 3) **Explain the disadvantages of not applying SOLID principles to your project with examples.**
 
    Jika kita tidak menerapkan SOLID principle, saya rasa akan sulit untuk mengembangkan program ke tingkat yang lebih kompleks karena sistem yang tidak mengikuti SOLID cenderung kurang fleksibel dalam mengakomodasi perubahan.
-   Selain itu, kurangnya pemisahan tanggung jawab dan pengkodean yang tidak jelas dapat menyebabkan perilaku yang tidak terduga dan menyebabkan kesalahan yang sulit diidentifikasi dan diperbaiki. 
+   Selain itu, kurangnya pemisahan tanggung jawab dan pengkodean yang tidak jelas dapat menyebabkan perilaku yang tidak terduga dan menyebabkan kesalahan yang sulit diidentifikasi dan diperbaiki.
    Misalnya, pengembang lain ingin agar ID yang diterapkan pada Product bisa menggunakan opsi selain UUID. Namun, karena sebelumnya saya selalu mengeset ID menggunakan UUID saat create product, maka bisa saja akan menyulitkan pengembang lain untuk mengextendnya.
 
 </details>
