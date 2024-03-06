@@ -8,6 +8,24 @@ Kelas   : Adpro-C
 
 Link Deploy: https://eshop-syifakaffa.koyeb.app/
 
+<details>
+<summary>Module 4</summary>
+
+## Reflection - Module 4
+
+1) **Reflect based on Percival (2017) proposed self-reflective questions (in “Principles and Best Practice of Testing” submodule, chapter “Evaluating Your Testing Objectives”), whether this TDD flow is useful enough for you or not.
+   If not, explain things that you need to do next time you make more tests.**
+
+   Menurut saya, penggunaan menggunakan pendekatan TDD cukup berguna bagi saya karena pendekatan TDD ini melakukan pengujian terlebih dahulu sebelum menulis kode yang akan diuji.
+   Saya cukup merasakan perbedaannya dibandingkan sebelumnya, dimana waktu yang saya gunakan untuk men debug tidak selama yang sebelumnya, walaupun memang di awal cukup sulit saat membuat test.
+
+
+2) **You have created unit tests in Tutorial. Now reflect whether your tests have successfully followed F.I.R.S.T. principle or not.
+   If not, explain things that you need to do the next time you create more tests.**
+
+   Ya, saya rasa kode yang saya buat telah mengikuti F.I.R.S.T Principle.
+
+</details>
 
 <details>
 <summary>Module 3</summary>
