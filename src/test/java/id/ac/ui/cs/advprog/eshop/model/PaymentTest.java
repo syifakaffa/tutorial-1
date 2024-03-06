@@ -76,7 +76,7 @@ class PaymentTest {
     @Test
     void testCreatePaymentSuccessStatus() {
         loadBankTransferPaymentData();
-        Payment payment = new Payment("a3e3e3e3-9a7f-4603-92c2-eaf529271cc9", "BANK", PaymentStatus.SUCCESS.getValue(), order, paymentData);
+        Payment payment = new Payment("a3e3e3e3-9a7f-4603-92c2-eaf529271cc9", "BANK", order, paymentData);
         assertEquals(PaymentStatus.SUCCESS.getValue(), payment.getStatus());
     }
 
